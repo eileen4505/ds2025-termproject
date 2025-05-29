@@ -35,7 +35,12 @@ This project aims to analyze how sleep-related variables impact academic perform
   - Regression: Linear, Polynomial, Random Forest, Gradient Boosting (for term GPA)
   - Permutation importance & learning curves
   - Hyperparameter tuning using GridSearchCV
-
+  - 
+## How to Use
+1. Clone this repo
+2. Run:
+   python src/pipeline.py --scaling standard --encoding onehot --model rf
+   
 ## Example Results
 
 - Sleep-only model (Classification): Accuracy ~0.4507  
