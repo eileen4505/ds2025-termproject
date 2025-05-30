@@ -9,13 +9,18 @@ This project aims to analyze how sleep-related variables impact academic perform
 
 ## Repository Structure
 
-| File / Folder              | Description |
-|---------------------------|-------------|
-| `final_pipeline_code.py`  | Full code pipeline from preprocessing to evaluation |
-| `preprocessed_cmudata.csv`| Cleaned and transformed dataset used for modeling |
-| `Term Project_Final Report.pdf` | Final report describing methodology and results |
-| `requirements.txt`        | List of required packages |
-| `README.md`               | Project overview and usage guide |
+## Repository Structure
+
+| File / Folder               | Description                                                  |
+|----------------------------|--------------------------------------------------------------|
+| `data/CMU_Sleep.csv`        | Cleaned and transformed dataset used for modeling            |
+| `notebooks/`                | Step-by-step preprocessing and modeling Jupyter notebooks    |
+| `src/pipeline.py`           | Top-level function: Full pipeline from preprocessing to evaluation |
+| `output/`                   | Model results, evaluation images (e.g., boxplots, confusion matrices) |
+| `README.md`                 | Project overview and usage guide                            |
+| `LICENSE.txt`               | License (MIT)                                               |
+| `requirements.txt`          | List of required packages                                   |
+| `Term_Project_Final_Report.pdf` | Final report describing the methodology and findings        |
 
 ## Features
 
@@ -35,7 +40,7 @@ This project aims to analyze how sleep-related variables impact academic perform
   - Regression: Linear, Polynomial, Random Forest, Gradient Boosting (for term GPA)
   - Permutation importance & learning curves
   - Hyperparameter tuning using GridSearchCV
-  - 
+    
 ## How to Use
 1. Clone this repo
 2. Run:
