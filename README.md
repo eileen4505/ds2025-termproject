@@ -12,7 +12,8 @@ This project aims to analyze how sleep-related variables impact academic perform
 
 | File / Folder               | Description                                                  |
 |----------------------------|--------------------------------------------------------------|
-| `data/CMU_Sleep.csv`        | Cleaned and transformed dataset used for modeling            |
+| `data/CMU_Sleep.csv`        |  Raw dataset before preprocessing             |
+| `data/preprocessed_cmudata.csv`  | Final cleaned dataset used for modeling                      |
 | `notebooks/`                | Step-by-step preprocessing and modeling Jupyter notebooks    |
 | `src/pipeline.py`           | Top-level function: Full pipeline from preprocessing to evaluation |
 | `output/`                   | Model results, evaluation images (e.g., boxplots, confusion matrices) |
