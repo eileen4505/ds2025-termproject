@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.impute import KNNImputer  # Class for imputing missing values using K-Nearest Neighbors
 from sklearn.preprocessing import StandardScaler
+from IPython.display import display
 
 # Data loading
 try:
-    df = pd.read_csv("CMU Sleep.csv")
+    df = pd.read_csv("CMU_Sleep.csv")
 except FileNotFoundError:  # Raised when attempting to access a file that does not exist
     print("CSV file not found.")
 
@@ -660,7 +661,7 @@ df_final_processed["gpa_class"] = pd.cut(df_final_processed["term_gpa"], bins=bi
 print(df_final_processed["gpa_class"].value_counts())
 
 # Save the currently processed DataFrame to a CSV file
-df_final_processed.to_csv("preprocessed_cmudata.csv", index=False, encoding="utf-8-sig")
+df_final_processed.to_csv("preprocessed_cmu_sleep.csv", index=False, encoding="utf-8-sig")
 
 # --- Modelling Section ---
 
