@@ -7,7 +7,6 @@ This project aims to analyze how sleep-related variables impact academic perform
 - Apply both classification and regression models to understand performance patterns
 - Share the entire pipeline for reproducibility and further research
 
-## Repository Structure
 
 ## Repository Structure
 
@@ -42,9 +41,19 @@ This project aims to analyze how sleep-related variables impact academic perform
   - Hyperparameter tuning using GridSearchCV
     
 ## How to Use
-1. Clone this repo
-2. Run:
-   python src/pipeline.py --scaling standard --encoding onehot --model rf
+
+1. Clone this repository
+2. Prepare your data file at `data/preprocessed_cmudata.csv`
+3. Run a model using Python:
+
+```python
+from final_run_pipeline_cleaned import run_pipeline, run_all_models
+
+# Run a single model
+run_pipeline(data_path="data/preprocessed_cmudata.csv", model_name="rf_reg")
+
+# Or run all models and compare performance
+run_all_models(data_path="data/preprocessed_cmudata.csv")
    
 ## Example Results
 
