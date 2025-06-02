@@ -7,13 +7,13 @@ This project aims to analyze how sleep-related variables impact academic perform
 - Apply both classification and regression models to understand performance patterns
 - Share the entire pipeline for reproducibility and further research
 
-## Repository Structure
 
 ## Repository Structure
 
 | File / Folder               | Description                                                  |
 |----------------------------|--------------------------------------------------------------|
-| `data/CMU_Sleep.csv`        | Cleaned and transformed dataset used for modeling            |
+| `data/CMU_Sleep.csv`        |  Raw dataset before preprocessing             |
+| `data/preprocessed_cmudata.csv`  | Final cleaned dataset used for modeling                      |
 | `notebooks/`                | Step-by-step preprocessing and modeling Jupyter notebooks    |
 | `src/pipeline.py`           | Top-level function: Full pipeline from preprocessing to evaluation |
 | `output/`                   | Model results, evaluation images (e.g., boxplots, confusion matrices) |
@@ -42,17 +42,34 @@ This project aims to analyze how sleep-related variables impact academic perform
   - Hyperparameter tuning using GridSearchCV
     
 ## How to Use
-1. Clone this repo
-2. Run:
-   python src/pipeline.py --scaling standard --encoding onehot --model rf
+
+1. Clone this repository
+2. Prepare your data file at `data/preprocessed_cmudata.csv`
+3. Run a model using Python:
+
+```python
+from final_pipeline)code import run_pipeline, run_all_models
+
+# Run a single model
+run_pipeline(data_path="data/preprocessed_cmudata.csv", model_name="rf_reg")
+
+# Or run all models and compare performance
+run_all_models(data_path="data/preprocessed_cmudata.csv")
    
 ## Example Results
 
-- Sleep-only model (Classification): Accuracy ~0.4507  
-- Demographic-only model: Accuracy ~0.4179  
-- Full-feature ensemble model: Accuracy ~0.6168  
+- Best Model: XGBoost Regressor  
+  - R²: 0.9999  
+  - RMSE: 0.0049
 
-Sleep-related features showed relatively higher predictive power than innate features.
+- Top 5 Models by R² Score:
+  1. xgb_reg — R²: 0.9999, RMSE: 0.0049  
+  2. rf_reg  — R²: 0.9122, RMSE: 0.1482  
+  3. gbr_reg — R²: 0.7958, RMSE: 0.2260  
+  4. poly2   — R²: 0.6689, RMSE: 0.2877  
+  5. lr      — R²: 0.4426, RMSE: 0.3734  
+
+Sleep-related features, when used in combination with cumulative GPA and term unit information, showed strong predictive power for academic performance.
 
 ## Contributors
 
