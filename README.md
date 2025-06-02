@@ -48,7 +48,7 @@ This project aims to analyze how sleep-related variables impact academic perform
 3. Run a model using Python:
 
 ```python
-from final_run_pipeline_cleaned import run_pipeline, run_all_models
+from final_pipeline)code import run_pipeline, run_all_models
 
 # Run a single model
 run_pipeline(data_path="data/preprocessed_cmudata.csv", model_name="rf_reg")
@@ -58,11 +58,18 @@ run_all_models(data_path="data/preprocessed_cmudata.csv")
    
 ## Example Results
 
-- Sleep-only model (Classification): Accuracy ~0.4507  
-- Demographic-only model: Accuracy ~0.4179  
-- Full-feature ensemble model: Accuracy ~0.6168  
+- Best Model: XGBoost Regressor  
+  - R²: 0.9999  
+  - RMSE: 0.0049
 
-Sleep-related features showed relatively higher predictive power than innate features.
+- Top 5 Models by R² Score:
+  1. xgb_reg — R²: 0.9999, RMSE: 0.0049  
+  2. rf_reg  — R²: 0.9122, RMSE: 0.1482  
+  3. gbr_reg — R²: 0.7958, RMSE: 0.2260  
+  4. poly2   — R²: 0.6689, RMSE: 0.2877  
+  5. lr      — R²: 0.4426, RMSE: 0.3734  
+
+Sleep-related features, when used in combination with cumulative GPA and term unit information, showed strong predictive power for academic performance.
 
 ## Contributors
 
